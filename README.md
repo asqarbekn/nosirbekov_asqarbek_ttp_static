@@ -1,1 +1,2 @@
-# nosirbekov_asqarbek_ttp_static
+# TTP Static Website
+A static web page with a dynamic clock.
