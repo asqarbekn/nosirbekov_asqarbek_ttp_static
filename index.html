@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>About Me</title>
+    </head>
+
+    <body>
+        
+        <style>
+            /*fixes background image*/
+            .background-img{
+                width: 100%;
+                height: auto;
+                position: fixed;
+    
+            }
+            /*moves text in front of image*/
+            h1{
+                width: 100%;
+                height: auto;
+                position: absolute;
+            }
+        </style>
+
+        <!--creates background image-->
+        <img class ="background-img" src="https://imgur.com/uSszy17.jpeg" alt="Upstate trip" >
+
+        <h1><center>My name is <i>Asqarbek Nosirbekov</i> and my favorite hobby is driving around and exploring new areas with friends. <br>The current time is: <div id="clock">
+        </center></h1>
+
+        <script type= "text/javascript">
+
+            //updates clock every 200 ms
+            setInterval(displayclock, 200);
+            function displayclock() {
+
+                //updates values of time
+                var time = new Date();
+                var hrs = time.getHours();
+                var min = time.getMinutes();
+                var sec = time.getSeconds();
+
+                //switches 24 hour format into 12 hour format
+                var en = 'AM'
+                if (hrs > 12) {
+                    hrs = hrs - 12;
+                    en = 'PM';
+                }
+
+                if (hrs == 0) {
+                    hrs = 12;
+                }
+
+                //ensures each value is double digits
+                if (hrs < 10) {
+                    hrs = '0' + hrs;
+                }
+
+                if (min < 10) {
+                    min = '0' + min;
+                }
+
+                if (sec < 10) {
+                    sec = '0' + sec;
+                }
+
+                document.getElementById('clock').innerHTML = hrs + ':' + min + ':' + sec + ' ' + en;
+            }
+        </script>
+
+    </body>
+</html>
